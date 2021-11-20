@@ -22,7 +22,6 @@ describe('Dodajanje novega psa', function () {
 
         
 
-        for(let i=0; i < 200; i++){
         cy.get('.sh-button--primary').contains('IGRAJ')
         .click()
 
@@ -55,7 +54,7 @@ describe('Dodajanje novega psa', function () {
 
         cy.get('.sh-button--primary').contains('IGRAJ PONOVNO')
             .click()
-        }
+        
         
         cy.wait(6000)
 
