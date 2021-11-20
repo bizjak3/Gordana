@@ -9,12 +9,12 @@ describe('Dodajanje novega psa', function () {
         cy.visit('https://www.barcaffe.si/play/start')
 
         cy.get('input[name="email"]')
-            .type('bizjak3@gmail.com')
-            .should('have.value', 'bizjak3@gmail.com')
+            .type('gostisce@primarjotu.si')
+            .should('have.value', 'gostisce@primarjotu.si')
 
         cy.get('input[name="password"]')
-            .type('9XLD9Sc88inMnXd')
-            .should('have.value', '9XLD9Sc88inMnXd')
+            .type('JjugpEkmcyV3SW4')
+            .should('have.value', 'JjugpEkmcyV3SW4')
 
         cy.get('input[name="log_in"]')
             .click()
@@ -22,6 +22,7 @@ describe('Dodajanje novega psa', function () {
 
         
 
+        for(let i=0; i < 200; i++){
         cy.get('.sh-button--primary').contains('IGRAJ')
         .click()
 
@@ -52,10 +53,11 @@ describe('Dodajanje novega psa', function () {
 
         cy.wait(8000)
 
-       
+        cy.get('.sh-button--primary').contains('IGRAJ PONOVNO')
+            .click()
+        }
         
-
-        
+        cy.wait(6000)
 
     });
 });
