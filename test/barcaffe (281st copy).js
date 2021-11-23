@@ -5,6 +5,15 @@
 // check out the link below and learn how to write your first test:
 // https://on.cypress.io/writing-first-test
 describe('Dodajanje novega psa', function () {
+
+    const COOKIE_NAME = "gdpr_level_1_necessary";
+// The value meaning that user has accepted the cookie policy
+const COOKIE_VALUE = "1";
+
+Cypress.on("window:before:load", window => {
+  window.document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}`;
+});
+
     it('Obisk strani za dodajanje in dodajenje', function () {
         cy.visit('https://www.barcaffe.si/play/start')
 
